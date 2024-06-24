@@ -14,6 +14,7 @@ app.get('/', (req, res) => {
 
 // making routes using files in routes folder
 app.use("/api/auth", require('./routes/auth.js'))
+app.use("/api/note", require('./routes/Notes.js'))
 
 
 app.listen(port, () => {

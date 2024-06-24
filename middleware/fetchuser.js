@@ -11,7 +11,6 @@ const fetchuser = async (req, res, next)=>{
         try{
             var decodeduserid = jwt.verify(req.header('authtokenheader'), 'shhhhh');
             const objectId = new mongoose.Types.ObjectId(decodeduserid);
-            console.log(objectId)
             const user_in_db = await Users.findById(objectId).select('-password');
             req.user = user_in_db; 
             next()
